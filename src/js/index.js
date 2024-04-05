@@ -13,6 +13,7 @@ import {
  */
 let form = document.querySelector("#todo-list-form");
 
+console.log()
 /**
  * Поле ввода заголовка задачи.
  * @type {HTMLInputElement}
@@ -50,13 +51,15 @@ let todos = [];
  */
 function render(todos) {
   list.innerHTML = `<h3>Todos (${countTodos(todos)})</h3>`;
-  todos.forEach(function (todo) {
+  todos.forEach((todo) => {
     list.insertAdjacentHTML(
       "beforeend",
       `<li><div class="card">${todo.icon} &nbsp;<strong>${todo.title}</strong> - by ${todo.author.firstName} ${todo.author.lastName}</strong> in ${todo.category}</div></li>`
     );
   });
+
 }
+
 
 /**
  * Обработчик события отправки формы для добавления задачи.
@@ -89,4 +92,5 @@ form.addEventListener("submit", (event) => {
   console.log("First todo title: " + firstTodoTitle(todos));
   console.log("Last todo title: " + lastTodoTitle(todos));
   console.log("Exported titles: ", exportTitles(todos));
+  
 });
