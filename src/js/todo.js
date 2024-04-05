@@ -53,7 +53,7 @@ export function lastTodoTitle(todos) {
   return todos.at(-1).title
 }
 
-// 
+// масив имен задач
 /**
  * @param {Todo[]} todos
  */
